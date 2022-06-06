@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  debian-backport:
+    build: .
+    container_name: debian-backport
+    image: debian-backport:latest
+    volumes:
+      # mount files under /backport
+      - ./:/backport
+    working_dir: /backport/build
